@@ -1,0 +1,158 @@
+.regular {
+	margin: 0 auto;
+	padding: ($gap * 2) 0;
+	max-width: 700px;
+}
+
+.hero {
+	position: relative;
+	margin-top: -21px;
+	padding-bottom: ($gap * 2);
+
+	.hero-background {
+		position: relative;
+		height: 700px;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		.overlay {
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: 700px;
+			background: rgba(0,0,0,.55);
+		}
+	}
+
+	header,
+	article {
+		z-index: 2;
+		margin: 0 auto;
+		padding: ($gap * 2) 0;
+		max-width: 700px;
+	}
+
+	header {
+		position: relative;
+		color: #fff;
+		text-align: center;
+		h1 {
+			margin-top: 200px;
+		}
+		h2 {
+			font-style: italic;
+			font-family: $font_serif;
+
+			-webkit-font-smoothing: antialiased;
+		}
+	}
+
+	.meta {
+		position: absolute;
+		bottom: $gap;
+		left: 50%;
+		z-index: 5;
+		margin: 0 0 0 -350px;
+		width: 700px;
+		text-align: center;
+
+		.avatar, .name, .length, .date {
+			display: block;
+			text-align: center;
+		}
+
+		.name {
+			margin: 5px 0;
+			color: #fff;
+			text-transform: normal;
+			font-style: italic;
+			font-size: 18px;
+			font-family: $font_serif;
+
+			-webkit-font-smoothing: antialiased;
+		}
+
+		img {
+			display: inline-block;
+		}
+
+		.date {
+			margin-top: 10px;
+			color: #fff;
+
+			-webkit-font-smoothing: antialiased;
+		}
+	}
+}
+
+section header {
+	.meta .author {
+		float: left;
+	}
+
+	.meta img {
+		float: left;
+		margin-right: 12px;
+	}
+
+	.meta a {
+		display: block;
+	}
+
+	.meta .date {
+		float: right;
+		margin-top: 8px;
+	}
+}
+
+footer.article-footer {
+	padding: $gap 0;
+	background: #fafafa;
+}
+
+.block .meta {
+	margin: 5px 0 0;
+}
+
+footer.page {
+	padding: ($gap * 2) 0;
+    background: #fff;
+	text-align: center;
+	p.copyright {
+		font-weight: 900;
+		font-size: 14px;
+		font-family: $font_sans;
+	}
+	p.tribute {
+		color: $color_light;
+		text-transform: uppercase;
+		letter-spacing: .5em;
+		font-size: 13px;
+	}
+}
+
+.section-things {
+    background: #f2f2f2;
+
+    section header {
+		z-index: 2;
+		margin: 0 auto;
+		padding: ($gap * 2) 0 $gap;
+		max-width: 700px;
+		text-align: center;
+	}
+}
+
+.read-more {
+    display: block;
+    margin-top: $gap * 3;
+    color: $color_light;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    font-size: 13px;
+    font-family: $font_sans;
+    font-family: $font_sans;
+
+    a { color: $color_mid; }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Another awesome Statamic site">
+  <title>{{ title ensure_right=" / " }}{{ site_name }}</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ theme:css }}">
+</head>
+
+<body class="section-{{ segment_1 or "home" }}">
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W9C7HJ6');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  {{ partial:nav }} {{ template_content }}
+
+  <footer>
+
+    <section class="container">
+
+      <div class="row">
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <a href="/blog"><img class="logo" src="{{ theme:img src="logo.svg" }}" alt="Bestow"></a>
+          <p>Bestow is a band of finance nerds, tech specialists and data scientists united in a common purpose: the belief that when life insurance is done right, the beneficiary is everyone.</p>
+          <p class="crafted-with-love"><img src="{{ theme:img src="icon-love.svg" }}" alt="Heart Outline"> Crafted with love</p>
+          <p class="copyright">Bestow Agency LLC, in CA dba Bestow Insurance Services<br>&copy; {{ now format="Y" }} {{ author_name }}</p>
+          <!-- <p class="tribute">Built with Statamic</p> -->
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+
+          <div class="social">
+            <a href="https://www.facebook.com/bestowinc"><img src="{{ theme:img src="icon-facebook.svg" }}" /></a>
+            <a href="https://twitter.com/bestowlife"><img src="{{ theme:img src="icon-twitter.svg" }}"></a>
+            <a href="https://www.instagram.com/bestowlife"><img src="{{ theme:img src="icon-instagram.svg" }}"></a>
+            <a href="https://angel.co/bestowlife"><img src="{{ theme:img src="icon-angellist.svg" }}"></a>
+            <a href="https://www.linkedin.com/company-beta/15255865"><img src="{{ theme:img src="icon-linkedin.svg" }}">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </div>
+  </footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="{{ theme:js }}"></script>
+
+</body>
+</html>

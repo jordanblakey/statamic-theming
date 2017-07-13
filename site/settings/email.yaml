@@ -1,0 +1,8 @@
+driver: log
+from_email: howdy@bestow.life
+from_name: Bestow
+host: ""
+port: 587
+encryption: tls
+username: ""
+password: ""

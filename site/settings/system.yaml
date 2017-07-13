@@ -1,0 +1,45 @@
+license_key: 25bcf35f-df25-4852-944e-5ad77eae60e3
+locales:
+  en:
+    full: en_US
+    name: English
+    url: http://localhost:3000/
+timezone: UTC
+date_format: F jS, Y
+default_extension: md
+filesystems:
+  content:
+    driver: local
+    root: site/content
+  storage:
+    driver: local
+    root: site/storage
+  users:
+    driver: local
+    root: site/users
+  themes:
+    driver: local
+    root: site/themes
+    url: /site/themes
+app_key: 27D2ur2Z9wrb9tuvAIu54Rav6ZMM2SlY
+redactor:
+  - 
+    name: Standard
+    settings:
+      buttons:
+        - formatting
+        - bold
+        - italic
+        - link
+        - unorderedlist
+        - orderedlist
+        - html
+  - 
+    name: Basic
+    settings:
+      buttons:
+        - bold
+        - italic
+csrf_exclude: [ ]
+send_powered_by_header: true
+ensure_unique_ids: true

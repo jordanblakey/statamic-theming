@@ -1,0 +1,50 @@
+// The colors duke! The colors!
+$color_dark:  #35383A; // Bestow Dark Grey
+$color_mid:   #666e77; // Bestow Medium Grey
+$color_light: #cdd0d2; // Bestow Light Grey
+$color_lighter: #F1F3F6; // Bestow Lighter Grey
+$color_lightest: #F7F9FA; // Bestow Lightest Grey
+$color_green: #96CC72; // Bestow Green
+
+$color_primary: #4796c6; // Bestow Blue
+
+// Fontsicles
+$font_sans:  "Roboto", -apple-system, Helvetica, sans-serif, "Apple Color Emoji",  "Segoe UI Emoji", "Segoe UI Symbol";
+$font_serif: "Droid Serif", "Georgia", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+
+$gap: 32px;
+
+.rounded {
+  border-radius: 500px;
+}
+
+@mixin laptop() {
+    @media only screen and (max-height: 800px) {
+        @content;
+    }
+}
+
+
+@mixin widescreen() {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media only screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media only screen and (max-width: 576px) {
+    @content;
+  }
+}

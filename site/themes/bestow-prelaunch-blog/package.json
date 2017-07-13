@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-livereload": "^3.8.1",
+    "laravel-elixir": "^3.4.3"
+  }
+}

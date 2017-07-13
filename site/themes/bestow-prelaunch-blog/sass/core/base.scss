@@ -3,6 +3,7 @@ body {
   color: $color_dark;
   font-size: 16px;
   font-family: $font_sans;
+
 }
 
 .inline { display: inline; }
@@ -14,12 +15,23 @@ body {
   margin: 0 auto;
 }
 
+.row {
+  margin: 0;
+}
+
 #signup, #hero {
   padding-top: 110px;
   padding-bottom: 110px;
-  background: #F7F9FA;
+  // background: #F7F9FA;
 }
+
+#signup {
+    color: white;
+    text-align: center;
+}
+
 #hero-wrapper {
+  padding-top: 99px;
   background: #333;
 
   #hero {
@@ -34,7 +46,7 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
     &.illustration {
       padding: 150px 15px;
-      background-color: #F7F9FA !important;
+      background-color: #fff !important;
       background-position: 50% 50% !important;
       background-size: contain !important;
       background-repeat: no-repeat !important;
@@ -115,29 +127,57 @@ body {
 #signup {
   h2 {
     margin-bottom: 25px;
-    font-weight: 100;
+    font-weight: 500;
   }
   p {
     margin-bottom: 50px;
     font-weight: 300;
+    font-size: 22px;
   }
-  #earlyAccessEmail input{
-    margin-right: 10px;
-    max-width: 100%;
-    width: 250px;
-    height:42px;
-    border-radius: 5px;
+  #earlyAccessEmail {
+    input {
+      margin-right: 10px;
+      max-width: 100%;
+      width: 250px;
+      height:42px;
+      border-radius: 5px;
+    }
+    button {
+      background: white;
+    }
   }
 }
 
-input {
+input{
   font-weight: 300;
+  &:focus {
+    border-color: rgb(150, 204, 114) !important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(150, 204, 114, .6) !important;
+  }
+}
+input, button[type="submit"], button {
+  -webkit-transition: all 150ms cubic-bezier(0.765, 0.030, 0.345, 0.965);
+  -moz-transition: all 150ms cubic-bezier(0.765, 0.030, 0.345, 0.965);
+  -o-transition: all 150ms cubic-bezier(0.765, 0.030, 0.345, 0.965);
+  transition: all 150ms cubic-bezier(0.765, 0.030, 0.345, 0.965); /* custom */
+  &:active {
+    color: rgb(150, 204, 114) !important;
+  }
+  &:hover {
+    border-color: rgb(150, 204, 114) !important;
+    color: rgb(150, 204, 114) !important;
+  }
+
 }
 
 .btn {
   padding: 1rem 4rem;
+  outline:none !important;
   border: 0px;
   border-radius: 500px;
+  &:active {
+    box-shadow: none;
+  }
 
   &.btn-primary {
     background: $color_primary;
@@ -187,34 +227,46 @@ footer {
     font-size: .75em;
     line-height: 1.3333333333em;
   }
-  .social {
+  .colophon {
+    margin-top: 40px;
+  }
+  .social, .colophon {
     text-align: right;
     a {
       display: inline-block;
       margin-left: 10px;
+      color: $color_green;
     }
   }
 }
 
-.navbar-bestow .navbar-brand {
-  padding: 38px 15px !important;
+.navbar-bestow {
+  border-bottom: 1px solid $color_lighter;
+  .navbar-brand {
+    padding: 38px 15px !important;
+
+  }
 }
 
 .navbar {
   button {
     float:right;
     margin: 27px 0;
+    border-bottom: 1px solid $color_lighter;
   }
 }
 
 // HOMEPAGE
 #who-we-are {
+  margin: 0;
+  padding: 75px 0;
+  background: #EBF3F8;
   text-align: center;
+
   .row:first-child img {
-    margin: 0 20px 60px 0;
+    margin: 0 0 60px 0;
   }
 }
-
 section {
   margin: 75px 0;
 }
@@ -236,6 +288,10 @@ section {
 
 .container-fluid.rule{
   padding: 0;
+  &.rule.clouds::before {
+    // background: #EBF3F8;
+    border: 0;
+  }
   &::before {
     display: block;
     border-bottom: 1px solid $color_lighter;
@@ -244,9 +300,12 @@ section {
     height:75px;
   }
 }
-
+#why-bestow h2 {
+  margin-bottom: 125px;
+}
 #why-bestow, #who-we-are, #how-bestow-works {
   h2 {
+    // color: $color_primary;
     text-align: center;
     font-weight: 100;
     font-size: 48px;
@@ -254,38 +313,65 @@ section {
   }
   .row {
     display: flex;
-    .col-md-4{
+    .col-md-8, .col-md-4{
       display: flex;
       flex-direction: column;
-      justify-content: center
+      justify-content: center;
     }
-    &:nth-child(even){
-      .col-md4 {
+    &:nth-child(odd){
+      .col-md-5 {
         order: 1;
       }
-      .col-md-8{
+      .col-md-7{
         order: 2;
       }
     }
+  }
 
 
-    p {
-      font-size: 22px;
-      font-family: $font_serif;
-      line-height: 32px;
-    }
-    h3 {
-      margin-bottom: 20px;
-      font-weight: 500;
-      font-size: 36px;
-      line-height: 44px;
-    }
-    img {
-      max-width: 100%;
+  p {
+    font-size: 22px;
+    font-family: $font_serif;
+    line-height: 32px;
+  }
+  h3 {
+    margin-bottom: 20px;
+    // color: $color_primary;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+#who-we-are {
+  background-color: #EBF3F8 !important;
+  background-position: top !important;
+  background-size: 100% auto !important;
+  background-repeat: no-repeat !important;
+
+  .row {
+    .col-md-8 {
+      display: block;
+      .horizontal-flex {
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 }
 
-section#how-bestow-works {
+#how-bestow-works {
   margin-bottom: 150px;
+  .row img {
+    margin-top: 58px;
+
+  }
+}
+
+.memphis-1 {
+  background-image: url('../img/memphis-2.svg');
+  // background-size: 46px 29px;
 }

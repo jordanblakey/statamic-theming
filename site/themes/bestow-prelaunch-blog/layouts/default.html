@@ -17,8 +17,8 @@
 </head>
 
 <body class="section-{{ segment_1 or "home" }}">
-  <!-- Google Tag Manager -->
   <script>
+    // GOOGLE TAG MANAGER
     (function (w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({
@@ -34,7 +34,6 @@
       f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-W9C7HJ6');
   </script>
-  <!-- End Google Tag Manager -->
 
   {{ partial:nav }} {{ template_content }}
 
@@ -59,7 +58,13 @@
             <a href="https://twitter.com/bestowlife"><img src="{{ theme:img src="icon-twitter.svg" }}"></a>
             <a href="https://www.instagram.com/bestowlife"><img src="{{ theme:img src="icon-instagram.svg" }}"></a>
             <a href="https://angel.co/bestowlife"><img src="{{ theme:img src="icon-angellist.svg" }}"></a>
-            <a href="https://www.linkedin.com/company-beta/15255865"><img src="{{ theme:img src="icon-linkedin.svg" }}">
+            <a href="https://www.linkedin.com/company-beta/15255865"><img src="{{ theme:img src="icon-linkedin.svg" }}"></a>
+          </div>
+
+          <div class="colophon">
+            <a href="#">Blog</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
           </div>
         </div>
       </div>
@@ -73,4 +78,5 @@
   <script src="{{ theme:js }}"></script>
 
 </body>
+
 </html>

@@ -1,7 +1,39 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,500");
 @import url("https://fonts.googleapis.com/css?family=Droid+Serif");
+@charset "UTF-8";
+
 .rounded {
   border-radius: 500px;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+.navbar-collapse.collapse,
+.navbar-header {
+  display: inline-block !important;
+}
+
+.navbar-collapse.collapse {
+  float: right;
+}
+
+.navbar-header {
+  float: left;
+}
+
+.navbar-nav > li,
+.navbar-nav {
+  float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+  margin-right: -15px !important;
+}
+
+.navbar-right {
+  float: right !important;
 }
 
 body {
@@ -28,14 +60,23 @@ body {
   margin: 0 auto;
 }
 
+.row {
+  margin: 0;
+}
+
 #signup,
 #hero {
   padding-top: 110px;
   padding-bottom: 110px;
-  background: #F7F9FA;
+}
+
+#signup {
+  color: white;
+  text-align: center;
 }
 
 #hero-wrapper {
+  padding-top: 99px;
   background: #333;
 }
 
@@ -49,7 +90,7 @@ body {
 
 #hero-wrapper #hero.illustration {
   padding: 150px 15px;
-  background-color: #F7F9FA !important;
+  background-color: #fff !important;
   background-position: 50% 50% !important;
   background-size: contain !important;
   background-repeat: no-repeat !important;
@@ -138,12 +179,13 @@ body {
 
 #signup h2 {
   margin-bottom: 25px;
-  font-weight: 100;
+  font-weight: 500;
 }
 
 #signup p {
   margin-bottom: 50px;
   font-weight: 300;
+  font-size: 22px;
 }
 
 #signup #earlyAccessEmail input {
@@ -154,14 +196,48 @@ body {
   border-radius: 5px;
 }
 
+#signup #earlyAccessEmail button {
+  background: white;
+}
+
 input {
   font-weight: 300;
 }
 
+input:focus {
+  border-color: #96cc72 !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(150, 204, 114, 0.6) !important;
+}
+
+input,
+button[type="submit"],
+button {
+  transition: all 150ms cubic-bezier(0.765, 0.03, 0.345, 0.965);
+  /* custom */
+}
+
+input:active,
+button[type="submit"]:active,
+button:active {
+  color: #96cc72 !important;
+}
+
+input:hover,
+button[type="submit"]:hover,
+button:hover {
+  border-color: #96cc72 !important;
+  color: #96cc72 !important;
+}
+
 .btn {
   padding: 1rem 4rem;
+  outline: none !important;
   border: 0px;
   border-radius: 500px;
+}
+
+.btn:active {
+  box-shadow: none;
 }
 
 .btn.btn-primary {
@@ -221,13 +297,24 @@ footer .copyright {
   line-height: 1.3333333333em;
 }
 
-footer .social {
+footer .colophon {
+  margin-top: 40px;
+}
+
+footer .social,
+footer .colophon {
   text-align: right;
 }
 
-footer .social a {
+footer .social a,
+footer .colophon a {
   display: inline-block;
   margin-left: 10px;
+  color: #96CC72;
+}
+
+.navbar-bestow {
+  border-bottom: 1px solid #F1F3F6;
 }
 
 .navbar-bestow .navbar-brand {
@@ -237,14 +324,18 @@ footer .social a {
 .navbar button {
   float: right;
   margin: 27px 0;
+  border-bottom: 1px solid #F1F3F6;
 }
 
 #who-we-are {
+  margin: 0;
+  padding: 75px 0;
+  background: #EBF3F8;
   text-align: center;
 }
 
 #who-we-are .row:first-child img {
-  margin: 0 20px 60px 0;
+  margin: 0 0 60px 0;
 }
 
 section {
@@ -271,6 +362,10 @@ section {
   padding: 0;
 }
 
+.container-fluid.rule.rule.clouds::before {
+  border: 0;
+}
+
 .container-fluid.rule::before {
   display: block;
   border-bottom: 1px solid #F1F3F6;
@@ -279,6 +374,10 @@ section {
 .container-fluid.rule::before,
 .container-fluid.rule::after {
   height: 75px;
+}
+
+#why-bestow h2 {
+  margin-bottom: 125px;
 }
 
 #why-bestow h2,
@@ -297,8 +396,11 @@ section {
   display: flex;
 }
 
+#why-bestow .row .col-md-8,
 #why-bestow .row .col-md-4,
+#who-we-are .row .col-md-8,
 #who-we-are .row .col-md-4,
+#how-bestow-works .row .col-md-8,
 #how-bestow-works .row .col-md-4 {
   display: -ms-flexbox;
   display: flex;
@@ -308,45 +410,71 @@ section {
   justify-content: center;
 }
 
-#why-bestow .row:nth-child(even) .col-md4,
-#who-we-are .row:nth-child(even) .col-md4,
-#how-bestow-works .row:nth-child(even) .col-md4 {
+#why-bestow .row:nth-child(odd) .col-md-5,
+#who-we-are .row:nth-child(odd) .col-md-5,
+#how-bestow-works .row:nth-child(odd) .col-md-5 {
   -ms-flex-order: 1;
   order: 1;
 }
 
-#why-bestow .row:nth-child(even) .col-md-8,
-#who-we-are .row:nth-child(even) .col-md-8,
-#how-bestow-works .row:nth-child(even) .col-md-8 {
+#why-bestow .row:nth-child(odd) .col-md-7,
+#who-we-are .row:nth-child(odd) .col-md-7,
+#how-bestow-works .row:nth-child(odd) .col-md-7 {
   -ms-flex-order: 2;
   order: 2;
 }
 
-#why-bestow .row p,
-#who-we-are .row p,
-#how-bestow-works .row p {
+#why-bestow p,
+#who-we-are p,
+#how-bestow-works p {
   font-size: 22px;
   font-family: "Droid Serif", "Georgia", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 32px;
 }
 
-#why-bestow .row h3,
-#who-we-are .row h3,
-#how-bestow-works .row h3 {
+#why-bestow h3,
+#who-we-are h3,
+#how-bestow-works h3 {
   margin-bottom: 20px;
   font-weight: 500;
   font-size: 36px;
   line-height: 44px;
 }
 
-#why-bestow .row img,
-#who-we-are .row img,
-#how-bestow-works .row img {
+#why-bestow img,
+#who-we-are img,
+#how-bestow-works img {
   max-width: 100%;
 }
 
-section#how-bestow-works {
+#who-we-are {
+  background-color: #EBF3F8 !important;
+  background-position: top !important;
+  background-size: 100% auto !important;
+  background-repeat: no-repeat !important;
+}
+
+#who-we-are .row .col-md-8 {
+  display: block;
+}
+
+#who-we-are .row .col-md-8 .horizontal-flex {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#how-bestow-works {
   margin-bottom: 150px;
+}
+
+#how-bestow-works .row img {
+  margin-top: 58px;
+}
+
+.memphis-1 {
+  background-image: url("../img/memphis-2.svg");
 }
 
 .regular {
@@ -512,82 +640,37 @@ footer.page p.tribute {
   color: #666e77;
 }
 
-body {
-  border: 2px dotted #6600cc;
-}
-
 body::before {
   position: fixed;
-  z-index: 1;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  border: 2px dotted #6600cc;
   color: #6600cc;
   content: "breakpoint: infinite (default): > 1200px";
-}
-
-@media only screen and (max-width: 1200px) {
-  body {
-    border: 2px dotted blue;
-  }
-
-  body::before {
-    position: fixed;
-    z-index: 1;
-    color: blue;
-    content: "breakpoint: widescreen (col-lg): 1200px";
-  }
-
-  #earlyAccessEmail .btn {
-    margin-left: 20px;
-  }
-
-  #hero-wrapper #hero.illustration h1 {
-    font-weight: 100;
-    font-size: 5vw;
-    line-height: 7vw;
-  }
-
-  #hero-wrapper #hero.illustration h1 small {
-    display: block;
-    font-weight: 300;
-    font-size: 2.4vw;
-    line-height: 50px;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  body {
-    border: 2px dotted #00cc44;
-  }
-
-  body::before {
-    position: fixed;
-    z-index: 1;
-    color: #00cc44;
-    content: "breakpoint: desktop (col-md): < 992px";
-  }
-
-  #hero-wrapper #hero.illustration h1 {
-    font-size: 45px;
-    line-height: 60px;
-  }
-
-  #hero-wrapper #hero.illustration h1 small {
-    margin-top: 16px;
-    width: 45%;
-    font-size: 24px;
-    line-height: 32px;
-  }
+  pointer-events: none;
 }
 
 @media only screen and (max-width: 768px) {
-  body {
-    border: 2px dotted #ffcc00;
-  }
-
   body::before {
     position: fixed;
-    z-index: 1;
-    color: #ffcc00;
-    content: "breakpoint: tablet (col-sm): < 768px";
+    z-index: 9999;
+    width: 100%;
+    width: 100%;
+    height: 100%;
+    height: 100%;
+    border: 2px dotted #cc6600;
+    color: #cc6600;
+    content: "Phones (<768px) col-xs";
+    pointer-events: none;
+  }
+
+  section.regular {
+    padding: 4rem 2rem !important;
+  }
+
+  .list.row > div {
+    width: 100%;
   }
 
   #hero-wrapper .overlay {
@@ -598,49 +681,31 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(247, 249, 250, 0.7);
-  }
-
-  #hero-wrapper #hero.illustration h1,
-  #hero-wrapper #hero.illustration h1 small {
-    width: 100%;
-  }
-
-  section.regular {
-    padding: 0 2rem;
-  }
-
-  #earlyAccessEmail .form-inline .form-control,
-  #earlyAccessEmail .form-group {
-    display: inline-block;
-    width: auto;
-    vertical-align: middle;
+    background: rgba(255, 255, 255, 0.7);
   }
 
   #hero-wrapper #hero.illustration {
-    background-position: center right !important;
+    background-position: 85% 20% !important;
     background-size: auto 100% !important;
   }
-}
 
-@media only screen and (max-width: 576px) {
-  body {
-    border: 2px dotted #cc6600;
+  #why-bestow .row {
+    display: block;
   }
 
-  body::before {
-    position: fixed;
-    z-index: 1;
-    color: #cc6600;
-    content: "breakpoint: mobile (col-xs): < 576px";
+  #why-bestow .row h3,
+  #why-bestow .row p {
+    text-align: center;
   }
 
-  section.regular {
-    padding: 4rem 2rem !important;
+  #why-bestow .row .col-md-8 {
+    margin-bottom: 40px;
   }
 
-  .list.row > div {
-    width: 100%;
+  #how-bestow-works .row img {
+    margin-left: -20%;
+    max-width: 140%;
+    width: 140%;
   }
 
   #earlyAccessEmail .form-group:last-child {
@@ -670,11 +735,17 @@ body::before {
     display: block;
   }
 
-  footer .row .social {
+  footer .row .colophon {
+    margin-top: 20px;
+  }
+
+  footer .row .social,
+  footer .row .colophon {
     text-align: left;
   }
 
-  footer .row .social a {
+  footer .row .social a,
+  footer .row .colophon a {
     margin: 0 10px 0 0;
   }
 
@@ -687,16 +758,112 @@ body::before {
   }
 }
 
-@media only screen and (max-height: 800px) {
-  body {
-    border: 2px dotted #aaa;
-  }
-
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   body::before {
     position: fixed;
-    z-index: 1;
-    color: purple;
-    content: "breakpoint: laptop";
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    border: 2px dotted #ffcc00;
+    color: #ffcc00;
+    content: "Tablets (≥768px) col-sm";
+    pointer-events: none;
+  }
+
+  #hero-wrapper .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  #hero-wrapper #hero.illustration h1,
+  #hero-wrapper #hero.illustration h1 small {
+    width: 100%;
+  }
+
+  section.regular {
+    padding: 0 2rem;
+  }
+
+  #earlyAccessEmail .form-inline .form-control,
+  #earlyAccessEmail .form-group {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  #hero-wrapper #hero.illustration {
+    background-position: center right !important;
+    background-size: auto 100% !important;
+  }
+
+  #how-bestow-works .row img {
+    margin-left: -20%;
+    max-width: 140%;
+    width: 140%;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  body::before {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    border: 2px dotted #00cc44;
+    color: #00cc44;
+    content: "Desktops (≥992px) col-md";
+    pointer-events: none;
+  }
+
+  #hero-wrapper #hero.illustration h1 {
+    font-weight: 100;
+    font-size: 5vw;
+    line-height: 7vw;
+  }
+
+  #hero-wrapper #hero.illustration h1 small {
+    display: block;
+    font-weight: 300;
+    font-size: 2.4vw;
+    line-height: 50px;
+  }
+
+  #how-bestow-works .row img {
+    margin-left: -20%;
+    max-width: 140%;
+    width: 140%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body::before {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    border: 2px dotted blue;
+    color: blue;
+    content: "Widescreen (≥1200px) col-lg";
+    pointer-events: none;
+  }
+
+  #hero-wrapper #hero.illustration h1 {
+    width: auto;
+    font-size: 64px;
+    line-height: 72px;
+  }
+
+  #hero-wrapper #hero.illustration h1 small {
+    margin-top: 16px;
+    width: auto;
+    font-size: 32px;
+    line-height: 40px;
   }
 }
 

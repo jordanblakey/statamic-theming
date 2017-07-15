@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,500");
 @import url("https://fonts.googleapis.com/css?family=Droid+Serif");
-@charset "UTF-8";
-
 .rounded {
   border-radius: 500px;
 }
@@ -64,68 +62,87 @@ body {
   margin: 0;
 }
 
-#signup,
-#hero {
-  padding-top: 110px;
-  padding-bottom: 110px;
+section {
+  margin: 75px 0;
 }
 
-#signup {
-  color: white;
-  text-align: center;
+.container-fluid.rule {
+  padding: 0;
 }
 
-#hero-wrapper {
-  padding-top: 99px;
-  background: #333;
+.container-fluid.rule.rule.clouds::before {
+  border: 0;
 }
 
-#hero-wrapper #hero {
-  position: relative;
-  background: rgba(255, 255, 255, 0);
-  background: -webkit-gradient(left top, right top, color-stop(20%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.4)), color-stop(100%, rgba(255, 255, 255, 0.4)));
-  background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
-}
-
-#hero-wrapper #hero.illustration {
-  padding: 150px 15px;
-  background-color: #fff !important;
-  background-position: 50% 50% !important;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-}
-
-#hero-wrapper #hero.illustration h1 {
-  font-weight: 100;
-  font-size: 64px;
-  line-height: 82px;
-}
-
-#hero-wrapper #hero.illustration h1 small {
+.container-fluid.rule::before {
   display: block;
-  margin-top: 24px;
+  border-bottom: 1px solid #F1F3F6;
+}
+
+.memphis-1 {
+  background-image: url("../img/memphis-2.svg");
+}
+
+.btn {
+  padding: 1rem 4rem;
+  outline: none !important;
+  border: 0px;
+  border-radius: 500px;
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+.btn.btn-primary:hover {
+  background: #96CC72;
+  transition: all .1s ease-out;
+}
+
+.btn.btn-primary {
+  background: #4796c6;
+}
+
+.btn.btn-ghost {
+  border: 2px solid #4796c6;
+  background: transparent;
+  color: #4796c6;
+}
+
+input {
   font-weight: 300;
-  font-size: 28px;
 }
 
-#hero-wrapper #hero h3 {
-  color: #35383A;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 40px;
+input:focus {
+  border-color: #96cc72;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(150, 204, 114, 0.6) !important;
 }
 
-#hero-wrapper #hero a:hover {
-  text-decoration: none !important;
+input,
+button {
+  transition: all 150ms cubic-bezier(0.765, 0.03, 0.345, 0.965);
+  /* custom */
 }
 
-#hero-wrapper #hero p {
-  margin-bottom: 4rem;
-  color: #666e77;
-  font-size: 2rem;
-  font-family: "Droid Serif", "Georgia", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  line-height: 3rem;
+input:active,
+button:active {
+  color: #96cc72;
+}
+
+input:hover,
+button:hover {
+  border-color: #96cc72;
+  color: #96cc72;
+}
+
+form .alert-danger {
+  clear: both;
+  margin: 0 auto 20px;
+  width: 390px;
+  border: 0;
+  border-radius: 500px;
+  background: #F18564;
+  color: white;
 }
 
 .list.row {
@@ -177,79 +194,6 @@ body {
   font-size: .875em;
 }
 
-#signup h2 {
-  margin-bottom: 25px;
-  font-weight: 500;
-}
-
-#signup p {
-  margin-bottom: 50px;
-  font-weight: 300;
-  font-size: 22px;
-}
-
-#signup #earlyAccessEmail input {
-  margin-right: 10px;
-  max-width: 100%;
-  width: 250px;
-  height: 42px;
-  border-radius: 5px;
-}
-
-#signup #earlyAccessEmail button {
-  background: white;
-}
-
-input {
-  font-weight: 300;
-}
-
-input:focus {
-  border-color: #96cc72 !important;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(150, 204, 114, 0.6) !important;
-}
-
-input,
-button[type="submit"],
-button {
-  transition: all 150ms cubic-bezier(0.765, 0.03, 0.345, 0.965);
-  /* custom */
-}
-
-input:active,
-button[type="submit"]:active,
-button:active {
-  color: #96cc72 !important;
-}
-
-input:hover,
-button[type="submit"]:hover,
-button:hover {
-  border-color: #96cc72 !important;
-  color: #96cc72 !important;
-}
-
-.btn {
-  padding: 1rem 4rem;
-  outline: none !important;
-  border: 0px;
-  border-radius: 500px;
-}
-
-.btn:active {
-  box-shadow: none;
-}
-
-.btn.btn-primary {
-  background: #4796c6;
-}
-
-.btn.btn-ghost {
-  border: 2px solid #4796c6;
-  background: transparent;
-  color: #4796c6;
-}
-
 footer .row {
   display: -ms-flexbox;
   display: flex;
@@ -277,24 +221,23 @@ footer p {
   line-height: 24px;
 }
 
-footer .crafted-with-love {
+footer .howdy {
   margin-top: 28px;
-  color: #96CC72;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  font-weight: 500;
+  color: #4796c6;
+  text-align: right;
+  font-weight: 300;
   font-size: .875em;
 }
 
-footer .crafted-with-love img {
+footer .howdy img {
   margin-right: 5px;
 }
 
 footer .copyright {
-  margin-bottom: 3em;
+  margin-top: 24px;
   font-weight: 300;
   font-size: .75em;
-  line-height: 1.3333333333em;
+  line-height: 2em;
 }
 
 footer .colophon {
@@ -313,71 +256,146 @@ footer .colophon a {
   color: #96CC72;
 }
 
-.navbar-bestow {
+.navbar {
+  transition: all .2s linear;
+}
+
+.navbar.navbar-bestow {
   border-bottom: 1px solid #F1F3F6;
 }
 
-.navbar-bestow .navbar-brand {
+.navbar.navbar-bestow .navbar-brand {
   padding: 38px 15px !important;
 }
 
-.navbar button {
+.navbar.navbar-default {
+  margin-top: -100px;
+}
+
+.navbar.navbar-fixed-top {
+  margin-top: 0;
+}
+
+.navbar a.btn {
   float: right;
   margin: 27px 0;
-  border-bottom: 1px solid #F1F3F6;
 }
 
-#who-we-are {
-  margin: 0;
-  padding: 75px 0;
-  background: #EBF3F8;
-  text-align: center;
-}
-
-#who-we-are .row:first-child img {
-  margin: 0 0 60px 0;
-}
-
-section {
-  margin: 75px 0;
+.navbar .btn-ghost:hover {
+  border-color: #96CC72;
+  background: #96CC72;
+  color: white;
+  transition: all 0.1s cubic-bezier(0, 0, 0.2, 1);
 }
 
 #hero-wrapper {
   margin: 0;
+  background: #333;
 }
 
-#why-bestow .row {
-  margin-bottom: 150px;
+#hero-wrapper #hero {
+  position: relative;
+  padding-top: 110px;
+  padding-bottom: 110px;
+  background: rgba(255, 255, 255, 0);
+  background: -webkit-gradient(left top, right top, color-stop(20%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.4)), color-stop(100%, rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
 }
 
-#why-bestow .row img {
-  width: 100%;
+#hero-wrapper #hero.illustration {
+  padding: 150px 15px;
+  background-color: #fff !important;
+  background-position: 50% 50% !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
 }
 
-#why-bestow .row:last-child {
-  margin-bottom: 0;
+#hero-wrapper #hero.illustration .hero-logo {
+  margin-bottom: 40px;
+  width: 240px;
+  text-align: center;
 }
 
-.container-fluid.rule {
-  padding: 0;
+#hero-wrapper #hero.illustration h1 {
+  font-weight: 100;
+  font-size: 64px;
+  line-height: 82px;
 }
 
-.container-fluid.rule.rule.clouds::before {
-  border: 0;
-}
-
-.container-fluid.rule::before {
+#hero-wrapper #hero.illustration h1 small {
   display: block;
-  border-bottom: 1px solid #F1F3F6;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 40px;
 }
 
-.container-fluid.rule::before,
-.container-fluid.rule::after {
-  height: 75px;
+#hero-wrapper #hero .btn.btn-primary:hover {
+  background: #96CC72;
 }
 
-#why-bestow h2 {
-  margin-bottom: 125px;
+#hero-wrapper #hero h3 {
+  color: #35383A;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+#hero-wrapper #hero a:hover {
+  text-decoration: none !important;
+}
+
+#hero-wrapper #hero p {
+  margin-bottom: 4rem;
+  color: #666e77;
+  font-size: 2rem;
+  font-family: "Droid Serif", "Georgia", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 3rem;
+}
+
+#signup {
+  padding-top: 110px;
+  padding-bottom: 110px;
+  background-color: #96CC72;
+  color: white;
+  text-align: center;
+}
+
+#signup button {
+  background: white;
+}
+
+#signup button.btn-ghost.btn:hover,
+#signup button.btn-ghost.btn:active {
+  background: #4796c6;
+  color: white;
+}
+
+#signup h2,
+#hero h2 {
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+#signup p,
+#hero p {
+  margin-bottom: 50px;
+  font-weight: 300;
+  font-size: 22px;
+}
+
+#signup #earlyAccessEmailTop input,
+#signup #earlyAccessEmailBottom input,
+#hero #earlyAccessEmailTop input,
+#hero #earlyAccessEmailBottom input {
+  margin-right: 10px;
+  max-width: 100%;
+  width: 300px;
+  height: 42px;
+  border-radius: 5px;
+  font-size: 18px;
 }
 
 #why-bestow h2,
@@ -394,20 +412,6 @@ section {
 #how-bestow-works .row {
   display: -ms-flexbox;
   display: flex;
-}
-
-#why-bestow .row .col-md-8,
-#why-bestow .row .col-md-4,
-#who-we-are .row .col-md-8,
-#who-we-are .row .col-md-4,
-#how-bestow-works .row .col-md-8,
-#how-bestow-works .row .col-md-4 {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 #why-bestow .row:nth-child(odd) .col-md-5,
@@ -429,7 +433,7 @@ section {
 #how-bestow-works p {
   font-size: 22px;
   font-family: "Droid Serif", "Georgia", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  line-height: 32px;
+  line-height: 40px;
 }
 
 #why-bestow h3,
@@ -448,10 +452,35 @@ section {
 }
 
 #who-we-are {
+  margin: 0;
+  padding: 75px 0 120px 0;
+  padding-top: 0;
+  background: #EBF3F8;
   background-color: #EBF3F8 !important;
   background-position: top !important;
   background-size: 100% auto !important;
   background-repeat: no-repeat !important;
+  text-align: center;
+}
+
+#who-we-are img {
+  width: 100%;
+}
+
+#who-we-are p {
+  text-align: left;
+}
+
+#who-we-are h2 {
+  margin-bottom: 20px;
+}
+
+#who-we-are h2 + .subhead {
+  margin-bottom: 60px;
+  text-align: center;
+  font-size: 24px;
+  font-family: "Roboto", -apple-system, Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 32px;
 }
 
 #who-we-are .row .col-md-8 {
@@ -465,7 +494,63 @@ section {
   justify-content: center;
 }
 
+#who-we-are .row:first-child img {
+  margin: 0 0 60px 0;
+}
+
+#why-bestow {
+  padding-top: 60px;
+}
+
+#why-bestow .row {
+  margin-bottom: 60px;
+}
+
+#why-bestow .row:first-child {
+  display: block;
+}
+
+#why-bestow .row:nth-child(odd) .col-md-5,
+#why-bestow .row:nth-child(odd) .col-md-4 {
+  -ms-flex-order: 1;
+  order: 1;
+  text-align: right;
+}
+
+#why-bestow .row:nth-child(odd) .col-md-7,
+#why-bestow .row:nth-child(odd) .col-md-8 {
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+#why-bestow .row .col-md-7,
+#why-bestow .row .col-md-5,
+#why-bestow .row .col-md-8,
+#why-bestow .row .col-md-4,
+#why-bestow .row .col-md-6,
+#why-bestow .row .col-md-6 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#why-bestow .row p {
+  line-height: 40px;
+}
+
+#why-bestow .row img {
+  width: 100%;
+}
+
+#why-bestow .row:last-child {
+  margin-bottom: 0;
+}
+
 #how-bestow-works {
+  overflow: hidden;
   margin-bottom: 150px;
 }
 
@@ -473,8 +558,51 @@ section {
   margin-top: 58px;
 }
 
-.memphis-1 {
-  background-image: url("../img/memphis-2.svg");
+.section-success .navbar-collapse {
+  display: none !important;
+}
+
+.section-success > .container {
+  padding-top: 60px;
+}
+
+.section-success > .container .btn {
+  display: block;
+  margin: 40px auto;
+  width: 300px;
+}
+
+.section-success .navbar {
+  margin-top: 0 !important;
+}
+
+.section-success .alert-success {
+  background: transparent;
+  text-align: center;
+}
+
+.section-success h1,
+.section-success hr {
+  display: none;
+}
+
+.section-success h1.thanks {
+  display: block;
+  text-align: center;
+  font-weight: 100;
+  font-size: 48px;
+  line-height: 64px;
+}
+
+.section-success .takeover-success h2 {
+  margin-bottom: 10px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.section-success .takeover-success p {
+  font-weight: 300;
 }
 
 .regular {
@@ -640,31 +768,7 @@ footer.page p.tribute {
   color: #666e77;
 }
 
-body::before {
-  position: fixed;
-  z-index: 9999;
-  width: 100%;
-  height: 100%;
-  border: 2px dotted #6600cc;
-  color: #6600cc;
-  content: "breakpoint: infinite (default): > 1200px";
-  pointer-events: none;
-}
-
 @media only screen and (max-width: 768px) {
-  body::before {
-    position: fixed;
-    z-index: 9999;
-    width: 100%;
-    width: 100%;
-    height: 100%;
-    height: 100%;
-    border: 2px dotted #cc6600;
-    color: #cc6600;
-    content: "Phones (<768px) col-xs";
-    pointer-events: none;
-  }
-
   section.regular {
     padding: 4rem 2rem !important;
   }
@@ -673,24 +777,75 @@ body::before {
     width: 100%;
   }
 
+  .navbar .container {
+    padding: 0 20px;
+  }
+
+  .navbar .container a.btn {
+    float: right;
+    margin: 29px 0;
+    padding: 8px 20px;
+  }
+
   #hero-wrapper .overlay {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.85);
   }
 
   #hero-wrapper #hero.illustration {
-    background-position: 85% 20% !important;
+    padding: 120px 15px;
+    background-position: 70% 20% !important;
     background-size: auto 100% !important;
+  }
+
+  #hero-wrapper #hero.illustration h1 {
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  #hero-wrapper #hero.illustration h1 small {
+    margin-top: 20px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  #who-we-are {
+    padding-bottom: 80px;
+  }
+
+  #who-we-are .container {
+    margin-top: 40px;
+  }
+
+  #who-we-are p {
+    font-size: 18px;
+    line-height: 36px;
+  }
+
+  #why-bestow {
+    padding-top: 0;
   }
 
   #why-bestow .row {
     display: block;
+    margin-bottom: 80px;
+  }
+
+  #why-bestow .row h2 {
+    margin-bottom: 0px;
+    font-size: 40px;
+  }
+
+  #why-bestow .row h3 {
+    margin-top: 60px;
+    margin-bottom: 14px;
+    font-size: 30px;
+    line-height: 36px;
   }
 
   #why-bestow .row h3,
@@ -698,37 +853,84 @@ body::before {
     text-align: center;
   }
 
+  #why-bestow .row p {
+    margin-top: 0;
+    font-size: 20px;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  #why-bestow .row img {
+    margin-left: 0%;
+    max-width: 100%;
+    width: 100%;
+  }
+
   #why-bestow .row .col-md-8 {
     margin-bottom: 40px;
   }
 
-  #how-bestow-works .row img {
-    margin-left: -20%;
-    max-width: 140%;
-    width: 140%;
+  #how-bestow-works {
+    margin-bottom: 120px;
   }
 
-  #earlyAccessEmail .form-group:last-child {
+  #how-bestow-works .row img {
+    margin-top: 20px;
+    margin-left: -30%;
+    max-width: 160%;
+    width: 160%;
+  }
+
+  #earlyAccessEmailTop .form-group:last-child,
+  #earlyAccessEmailBottom .form-group:last-child {
     margin-bottom: 0;
   }
 
-  #earlyAccessEmail .form-inline .form-control,
-  #earlyAccessEmail .form-group {
+  #earlyAccessEmailTop .form-inline .form-control,
+  #earlyAccessEmailTop .form-group,
+  #earlyAccessEmailBottom .form-inline .form-control,
+  #earlyAccessEmailBottom .form-group {
     display: block;
   }
 
-  #earlyAccessEmail .form-inline .form-control input,
-  #earlyAccessEmail .form-inline .form-control #email,
-  #earlyAccessEmail .form-group input,
-  #earlyAccessEmail .form-group #email {
+  #earlyAccessEmailTop .form-inline .form-control input,
+  #earlyAccessEmailTop .form-inline .form-control #emailBottom,
+  #earlyAccessEmailTop .form-group input,
+  #earlyAccessEmailTop .form-group #emailBottom,
+  #earlyAccessEmailBottom .form-inline .form-control input,
+  #earlyAccessEmailBottom .form-inline .form-control #emailBottom,
+  #earlyAccessEmailBottom .form-group input,
+  #earlyAccessEmailBottom .form-group #emailBottom {
     width: 100%;
   }
 
-  #earlyAccessEmail .form-inline .form-control .btn,
-  #earlyAccessEmail .form-group .btn {
+  #earlyAccessEmailTop .form-inline .form-control .btn,
+  #earlyAccessEmailTop .form-group .btn,
+  #earlyAccessEmailBottom .form-inline .form-control .btn,
+  #earlyAccessEmailBottom .form-group .btn {
     margin-bottom: 0;
     margin-left: 0;
     width: 100%;
+  }
+
+  #hero .col-md-8 #emailBottom,
+  #hero h1 #emailBottom,
+  #hero p #emailBottom,
+  #hero form #emailBottom {
+    width: 300px;
+  }
+
+  #hero #earlyAccessEmailTop input,
+  #hero #earlyAccessEmailTop #emailBottom,
+  #hero #earlyAccessEmailBottom input,
+  #hero #earlyAccessEmailBottom #emailBottom {
+    display: inline-block;
+    width: 300px;
+  }
+
+  #hero #earlyAccessEmailTop .btn,
+  #hero #earlyAccessEmailBottom .btn {
+    width: 200px;
   }
 
   footer .row {
@@ -740,12 +942,14 @@ body::before {
   }
 
   footer .row .social,
-  footer .row .colophon {
+  footer .row .colophon,
+  footer .row .howdy {
     text-align: left;
   }
 
   footer .row .social a,
-  footer .row .colophon a {
+  footer .row .colophon a,
+  footer .row .howdy a {
     margin: 0 10px 0 0;
   }
 
@@ -756,29 +960,25 @@ body::before {
     -ms-flex-pack: top;
     justify-content: top;
   }
+
+  .section-success > .container h1.thanks {
+    font-size: 40px;
+    line-height: 54px;
+  }
+
+  .section-success > .container .btn {
+    width: auto !important;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  body::before {
-    position: fixed;
-    z-index: 9999;
-    width: 100%;
-    height: 100%;
-    border: 2px dotted #ffcc00;
-    color: #ffcc00;
-    content: "Tablets (≥768px) col-sm";
-    pointer-events: none;
-  }
-
   #hero-wrapper .overlay {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.8);
   }
 
   #hero-wrapper #hero.illustration h1,
@@ -790,15 +990,17 @@ body::before {
     padding: 0 2rem;
   }
 
-  #earlyAccessEmail .form-inline .form-control,
-  #earlyAccessEmail .form-group {
+  #earlyAccessEmailTop .form-inline .form-control,
+  #earlyAccessEmailTop .form-group,
+  #earlyAccessEmailBottom .form-inline .form-control,
+  #earlyAccessEmailBottom .form-group {
     display: inline-block;
     width: auto;
     vertical-align: middle;
   }
 
   #hero-wrapper #hero.illustration {
-    background-position: center right !important;
+    background-position: 70% 0% !important;
     background-size: auto 100% !important;
   }
 
@@ -807,18 +1009,41 @@ body::before {
     max-width: 140%;
     width: 140%;
   }
+
+  #why-bestow .row p {
+    margin-top: 0;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  #why-bestow .row img {
+    margin-left: -20%;
+    max-width: 140%;
+    width: 140%;
+  }
+
+  #why-bestow .row h3 {
+    margin-bottom: 14px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+.section-success > .container h1.thanks {
+  font-size: 40px;
+  line-height: 54px;
+}
+
+.section-success > .container .btn {
+  display: block;
+  margin: 40px auto;
+  width: 300px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  body::before {
-    position: fixed;
-    z-index: 9999;
-    width: 100%;
-    height: 100%;
-    border: 2px dotted #00cc44;
-    color: #00cc44;
-    content: "Desktops (≥992px) col-md";
-    pointer-events: none;
+  #hero-wrapper #hero.illustration {
+    background-position: 50% 50% !important;
+    background-size: cover !important;
   }
 
   #hero-wrapper #hero.illustration h1 {
@@ -834,6 +1059,10 @@ body::before {
     line-height: 50px;
   }
 
+  #how-bestow-works {
+    overflow: hidden;
+  }
+
   #how-bestow-works .row img {
     margin-left: -20%;
     max-width: 140%;
@@ -842,17 +1071,6 @@ body::before {
 }
 
 @media only screen and (min-width: 1200px) {
-  body::before {
-    position: fixed;
-    z-index: 9999;
-    width: 100%;
-    height: 100%;
-    border: 2px dotted blue;
-    color: blue;
-    content: "Widescreen (≥1200px) col-lg";
-    pointer-events: none;
-  }
-
   #hero-wrapper #hero.illustration h1 {
     width: auto;
     font-size: 64px;

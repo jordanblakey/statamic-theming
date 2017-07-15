@@ -1,14 +1,23 @@
-body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2px dotted #6600cc;color:#6600cc;content:"breakpoint: infinite (default): > 1200px"; pointer-events: none;}} // Debug
+// body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2px dotted #6600cc;color:#6600cc;content:"breakpoint: infinite (default): > 1200px"; pointer-events: none;}} // Debug
 
 // Phones (<768px) //////////////////////////////////////////////////////////////////////////////
 @include mobile {
-  body {&::before {position:fixed;z-index: 9999;width:100%; width:100%; height:100%;height:100%; border: 2px dotted #cc6600; color:#cc6600;content:"Phones (<768px) col-xs"; pointer-events: none;;}} // Debug
+  // body {&::before {position:fixed;z-index: 9999;width:100%; width:100%; height:100%;height:100%; border: 2px dotted #cc6600; color:#cc6600;content:"Phones (<768px) col-xs"; pointer-events: none;;}} // Debug
 
   section.regular {
     padding: 4rem 2rem !important;
   }
   .list.row > div {
     width: 100%;
+  }
+
+  .navbar .container {
+    padding: 0 20px;
+    a.btn {
+      float: right;
+      margin: 29px 0;
+      padding: 8px 20px;
+    }
   }
 
   #hero-wrapper {
@@ -18,22 +27,66 @@ body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2p
       right: 0;
       bottom: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255,255,255, 0.7);
+      background: rgba(255,255,255, 0.85);
     }
 
     #hero.illustration {
-      background-position: 85% 20% !important;
+      padding: 120px 15px;
+      background-position: 70% 20% !important;
       background-size: auto 100% !important;
+      h1 {
+        font-weight: 300;
+        font-size: 36px;
+        line-height: 48px;
+
+        small {
+          margin-top: 20px;
+          font-size: 24px;
+          line-height: 36px;
+        }
+      }
+    }
+  }
+
+  #who-we-are {
+    padding-bottom: 80px;
+    .container {
+      margin-top: 40px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 36px;
     }
   }
 
   #why-bestow {
+    padding-top: 0;
     .row {
       display: block;
+      margin-bottom: 80px;
+      h2 {
+        margin-bottom: 0px;
+        font-size: 40px;
+      }
+      h3 {
+        margin-top: 60px;
+        margin-bottom: 14px;
+        font-size: 30px;
+        line-height: 36px;
+      }
       h3, p {
         text-align: center;
+      }
+      p {
+        margin-top: 0;
+        font-size: 20px;
+        font-size: 18px;
+        line-height: 32px;
+      }
+      img {
+        margin-left: 0%;
+        max-width: 100%;
+        width: 100%;
       }
       .col-md-8 {
         margin-bottom: 40px;
@@ -41,21 +94,25 @@ body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2p
     }
   }
 
+
   #how-bestow-works {
+    margin-bottom: 120px;
     .row img {
-      margin-left: -20%;
-      max-width: 140%;
-      width: 140%;
+      margin-top: 20px;
+      margin-left: -30%;
+      max-width: 160%;
+      width: 160%;
+
     }
   }
 
-  #earlyAccessEmail {
+  #earlyAccessEmailTop, #earlyAccessEmailBottom {
     .form-group:last-child{
       margin-bottom: 0;
     }
     .form-inline .form-control, .form-group {
       display: block;
-      input, #email {
+      input, #emailBottom {
         width: 100%;
       }
       .btn {
@@ -66,23 +123,54 @@ body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2p
     }
   }
 
+  #hero {
+    .col-md-8, h1, p, form{
+      // text-align: center;
+      #emailBottom {
+        width: 300px;
+      }
+    }
+
+    #earlyAccessEmailTop, #earlyAccessEmailBottom {
+      input, #emailBottom {
+        display: inline-block;
+        width: 300px;
+      }
+      .btn {
+        width: 200px;
+      }
+
+    }
+  }
+
   footer {
     .row {
       display: block;
       .colophon {
         margin-top: 20px;
       }
-      .social, .colophon {
+      .social, .colophon, .howdy {
         text-align: left;
         a {
           margin: 0 10px 0 0;
         }
       }
-
       &> div + div {
         display: block;
         flex-direction: row;
         justify-content: top;
+      }
+    }
+  }
+
+  .section-success {
+    & > .container {
+      h1.thanks {
+        font-size: 40px;
+        line-height: 54px;
+      }
+      .btn {
+        width: auto !important;
       }
     }
   }
@@ -92,7 +180,7 @@ body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2p
 
 // Tablets (≥768px) //////////////////////////////////////////////////////////////////////////////
 @include tablet {
-  body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2px dotted #ffcc00;color:#ffcc00;content:"Tablets (≥768px) col-sm"; pointer-events: none;}} // Debug
+  // body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2px dotted #ffcc00;color:#ffcc00;content:"Tablets (≥768px) col-sm"; pointer-events: none;}} // Debug
   #hero-wrapper {
 
     .overlay {
@@ -101,9 +189,7 @@ body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2p
       right: 0;
       bottom: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255,255,255, 0.7);
+      background: rgba(255,255,255, 0.8);
     }
 
     #hero.illustration {
@@ -115,7 +201,7 @@ body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2p
 
   section.regular {padding: 0 2rem;}
 
-  #earlyAccessEmail {
+  #earlyAccessEmailTop, #earlyAccessEmailBottom {
     .form-inline .form-control, .form-group {
       display: inline-block;
       width: auto;
@@ -123,7 +209,7 @@ body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2p
     }
   }
   #hero-wrapper #hero.illustration {
-    background-position: center right !important;
+    background-position: 70% 0% !important;
     background-size: auto 100% !important;
   }
 
@@ -134,25 +220,64 @@ body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2p
       width: 140%;
     }
   }
+
+  #why-bestow .row {
+    p {
+      margin-top: 0;
+      font-size: 18px;
+      line-height: 32px;
+    }
+    img {
+      margin-left: -20%;
+      max-width: 140%;
+      width: 140%;
+    }
+    h3 {
+      margin-bottom: 14px;
+      font-size: 30px;
+      line-height: 36px;
+    }
+  }
 };
+
+.section-success {
+  & > .container {
+    h1.thanks {
+      font-size: 40px;
+      line-height: 54px;
+    }
+    .btn {
+      display: block;
+      margin: 40px auto;
+      width: 300px;
+    }
+  }
+}
+
+
 
 // Desktops (≥992px) //////////////////////////////////////////////////////////////////////////////
 @include desktop {
-  body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2px dotted #00cc44;color:#00cc44;content:"Desktops (≥992px) col-md"; pointer-events: none;}} // Debug
+  // body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2px dotted #00cc44;color:#00cc44;content:"Desktops (≥992px) col-md"; pointer-events: none;}} // Debug
 
-  #hero-wrapper #hero.illustration h1 {
-    font-weight: 100;
-    font-size: 5vw;
-    line-height: 7vw;
-    small {
-      display: block;
-      font-weight: 300;
-      font-size: 2.4vw;
-      line-height: 50px;
+  #hero-wrapper #hero.illustration {
+    background-position: 50% 50% !important;
+    background-size: cover !important;
+    h1 {
+      font-weight: 100;
+      font-size: 5vw;
+      line-height: 7vw;
+      small {
+        display: block;
+        font-weight: 300;
+        font-size: 2.4vw;
+        line-height: 50px;
+      }
     }
   }
 
   #how-bestow-works {
+    overflow: hidden;
     .row img {
       margin-left: -20%;
       max-width: 140%;
@@ -163,9 +288,9 @@ body {&::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2p
 
 // Widescreen (≥1200px) //////////////////////////////////////////////////////////////////////////////
 @include widescreen { // < 1200 Wide
-  body {  &::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2px dotted blue;color:blue;content:"Widescreen (≥1200px) col-lg"; pointer-events: none;}} // Debug
+  // body {  &::before {position:fixed;z-index: 9999;width:100%; height:100%;border: 2px dotted blue;color:blue;content:"Widescreen (≥1200px) col-lg"; pointer-events: none;}} // Debug
 
-  #earlyAccessEmail .btn {
+  #earlyAccessEmailTop .btn, #earlyAccessEmailBottom .btn {
   }
 
   #hero-wrapper #hero.illustration h1 {

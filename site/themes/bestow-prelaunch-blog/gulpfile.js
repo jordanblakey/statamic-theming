@@ -13,7 +13,6 @@ elixir.config.assetsPath = './';
  |
  */
 
-// Built in Elixir tasks, replaces common Gulp tasks... more are available.
 elixir(function(mix) {
     mix.sass(theme + '.scss', 'css/' + theme + '.css');
     mix.scripts([

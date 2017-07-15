@@ -1,0 +1,32 @@
+{{ form:create in="early-signup" attr="class:form-inline|id:earlyAccessEmailBottom"}} {{ if errors }}
+
+<div class="alert alert-danger">
+  {{ errors }} {{ value }}
+  <br> {{ /errors }}
+</div>
+{{ /if }} {{ if success }} {{ redirect to="/success/" }} {{ /if }}
+
+<script>
+  function captureEmail() {
+    // var vid = Intercom('getVisitorId');
+    // alert(vid);
+    var email = '{\'email\':\"' + $('#emailBottom').val() + '\"}';
+    Intercom('update', email);
+  }
+</script>
+
+<div class="form-group">
+  <label for="email" class="sr-only">Email</label>
+  <input type="email" name="email" class="form-control" id="emailBottom" placeholder="Your email address">
+</div>
+
+<div class="form-group">
+  <button type="submit" name="submit" class="btn-ghost btn" onclick="captureEmail(); fbq('track', 'Lead');" value="Step Inside">Step Inside</button>
+</div>
+
+<!-- Geolocation -->
+<input type="hidden" name="latitude" value="latitude" class="user_lat" id="user_lat">
+<input type="hidden" name="longitude" value="longitude" class="user_long" id="user_long">
+<input type="hidden" name="refurl" value="refurl" class="ref_url" id="ref_url">
+<!-- Spam Prevention -->
+<input type="hidden" name="beartrap" class="beartrap" /> {{ /form:create }}

@@ -7,18 +7,90 @@
 <!--<![endif]-->
 
 <head>
+  <title>{{ if ! segment_1 == true }}{{ site_name }} | {{ meta_site_tagline }}{{ else }}{{ title }}{{ endif }}</title>
+  <!-- <title>{{ title ensure_right=" / " }}{{ site_name }}</title> -->
+
+  <!-- META: Standard -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Another awesome Statamic site">
-  <title>{{ title ensure_right=" / " }}{{ site_name }}</title>
+  <meta name="description" content="{{ if ! segment_1 == true }}{{ meta_description }}{{ else }}{{sub_title | truncate:90:... }}{{ endif }}" />
+  <meta content="#4796c6" name="msapplication-TileColor">
+
+  <!-- META: Schema.org markup for Google+ -->
+  <meta itemprop="name" content="{{ if ! segment_1 == true }}{{ site_name }} | {{ meta_site_tagline }}{{ else }}{{ title }}{{ endif }}">
+  <meta itemprop="description" content="{{ if ! segment_1 == true }}{{ meta_description }}{{ else }}{{sub_title | truncate:140:... }}{{ endif }}" />
+  <meta itemprop="image" content="{{ if ! segment_1 == true }}{{ env_url }}assets/img/{{google_img}}{{ elseif ! segement_1 == " blog " }}{{ intro_image }}{{ endif }}" />
+
+  <!-- META: Twitter Card data -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="{{ meta_twitter_handle }}" />
+  <meta name="twitter:title" content="{{ if ! segment_1 == true }}{{ site_name }}{{ else }}{{ title }}{{ endif}}" />
+  <meta name="twitter:description" content="{{ if ! segment_1 == true }}{{ meta_twitter_description }}{{ else }}{{sub_title | truncate:140:... }}{{ endif }}" />
+  <meta name="twitter:image" content="{{ if ! segment_1 == true }}{{ env_url }}assets/img/{{twitter_img}}{{ elseif ! segement_1 == " blog " }}{{ intro_image }}{{ endif }}" />
+
+  <!-- META: FB Open Graph data -->
+  <meta property="og:title" content="{{ if ! segment_1 == true }}{{ meta_opengraph_title }}{{ else }}{{ title }}{{ endif}}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{{ env_url }}" />
+  <meta property="og:image" content="{{ if ! segment_1 == true }}{{ env_url }}assets/img/{{og_img}}{{ elseif ! segement_1 == " blog " }}{{ intro_image }}{{ endif }}" />
+  <meta property="og:description" content="{{ if ! segment_1 == true }}{{ meta_description }}{{ else }}{{sub_title | truncate:140:... }}{{ endif }}" />
+  <meta property="og:site_name" content="{{ site_name }}" />
+
+  <!-- Favicons -->
+  <link href="/ico/favicon.ico" rel="shortcut icon">
+  <link href="/ico/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+  <link href="/ico/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+  <link href="/ico/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+  <link href="/ico/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+  <link href="/ico/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+  <link href="/ico/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+  <link href="/ico/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+  <link href="/ico/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+  <link href="/ico/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/ico/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png">
+  <link href="/ico/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png">
+  <link href="/ico/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+  <link href="/ico/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="/ico/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="{{ theme:css }}">
 </head>
 
 <body class="section-{{ segment_1 or "home" }}">
+
+  <!-- Facebook Pixel Code -->
   <script>
-    // GOOGLE TAG MANAGER
+    ! function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window,
+      document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '771799049666662'); // Insert your pixel ID here.
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=771799049666662&ev=PageView&noscript=1" /></noscript>
+  <!-- DO NOT MODIFY -->
+  <!-- End Facebook Pixel Code -->
+
+  <!-- End Google Tag Manager Code -->
+  <script>
     (function (w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({
@@ -34,6 +106,49 @@
       f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-W9C7HJ6');
   </script>
+  <!-- DO NOT MODIFY -->
+  <!-- End Google Tag Manager Code -->
+
+  <!-- Intercom API Code -->
+  <script type="text/javascript">
+    // Set your APP_ID
+    var APP_ID = "z6uqiu9w"; // Production
+    // var APP_ID = "xaqr2fhe"; // Testing
+
+    (function () {
+      var w = window;
+      var ic = w.Intercom;
+      if (typeof ic === "function") {
+        ic('reattach_activator');
+        ic('update', intercomSettings);
+      } else {
+        var d = document;
+        var i = function () {
+          i.c(arguments)
+        };
+        i.q = [];
+        i.c = function (args) {
+          i.q.push(args)
+        };
+        w.Intercom = i;
+
+        function l() {
+          var s = d.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = 'https://widget.intercom.io/widget/' + APP_ID;
+          var x = d.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s, x);
+        }
+        if (w.attachEvent) {
+          w.attachEvent('onload', l);
+        } else {
+          w.addEventListener('load', l, false);
+        }
+      }
+    })();
+  </script>
+
 
   {{ partial:nav }} {{ template_content }}
 
@@ -45,8 +160,7 @@
 
         <div class="col-md-6 col-sm-6 col-xs-12">
           <a href="/blog"><img class="logo" src="{{ theme:img src="logo.svg" }}" alt="Bestow"></a>
-          <p>Bestow is a band of finance nerds, tech specialists and data scientists united in a common purpose: the belief that when life insurance is done right, the beneficiary is everyone.</p>
-          <p class="crafted-with-love"><img src="{{ theme:img src="icon-love.svg" }}" alt="Heart Outline"> Crafted with love</p>
+          <p>Bestow is a band of finance nerds, tech specialists and data scientists united in a common purpose: the belief that when life insurance is done right, the beneficiary&nbsp;is&nbsp;everyone.</p>
           <p class="copyright">Bestow Agency LLC, in CA dba Bestow Insurance Services<br>&copy; {{ now format="Y" }} {{ author_name }}</p>
           <!-- <p class="tribute">Built with Statamic</p> -->
         </div>
@@ -61,11 +175,14 @@
             <a href="https://www.linkedin.com/company-beta/15255865"><img src="{{ theme:img src="icon-linkedin.svg" }}"></a>
           </div>
 
-          <div class="colophon">
+          <!-- <div class="colophon">
             <a href="#">Blog</a>
             <a href="#">Privacy</a>
             <a href="#">Terms</a>
-          </div>
+          </div> -->
+
+          <p class="howdy"><img src="{{ theme:img src="icon-texas.svg" }}" alt="Howdy">Howdy</p>
+
         </div>
       </div>
     </section>
@@ -76,6 +193,14 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="{{ theme:js }}"></script>
+  <script>
+    // Init Intercom
+    window.Intercom('boot', {
+      app_id: 'z6uqiu9w', // Production (Don't forget to change app_id in the header as well)
+      // app_id: 'xaqr2fhe', // Testing (Don't forget to change app_id in the header as well)
+      //Logged out user so may not have any user related info
+    });
+  </script>
 
 </body>
 

@@ -1,0 +1,28 @@
+title: Early Sign-up
+fields:
+  email:
+    display: Email Address
+    validate: required|email
+  latitude:
+    display: Latitude
+  longitude:
+    display: Longitude
+  refurl:
+    display: Referal URL
+  id:
+    display: Submission ID
+columns:
+  - email
+  - latitude
+  - longitude
+  - refurl
+  - id
+metrics:
+  - 
+    type: total
+    label: Total Responses
+email:
+  - 
+    to: z6uqiu9w@incoming.intercom-mail.com
+    subject: "Someone Else Want's To Be A Part of Bestow!"
+    automagic: true

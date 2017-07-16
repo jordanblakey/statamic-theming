@@ -16,5 +16,7 @@ id: 044f7424-cd7c-454a-95de-13a6bdc063c5
       </div>
         <a class="btn-primary btn" href="/blog">Read the Blog</a>
 
+				{{ partial:social-sharing }}
+
     </div>
 </div>
